@@ -26,37 +26,25 @@ public class HospitalAppApplication {
 			patient.setLastName("OMAR");
 			patient.setBirthDate(new Date());
 			patient.setMalade(true);
-			patient.setScore(-3);
+			patient.setScore(20);
 			patientRepository.save(patient);
 
 			//AllArgsConstructor
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
-			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),1,false));
+			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),11,false));
+			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),11,false));
+			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),11,false));
+			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),11,false));
+			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),11,false));
+			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),11,false));
+			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),11,false));
+			patientRepository.save(new Patient(null,"ALAOUI","MOHAMED",new Date(),11,false));
 
 			//Builder
 			Patient patient1 = Patient.builder()
 					.firstName("KARIM")
 					.lastName("FOUAD")
 					.birthDate(new Date())
-					.score(3)
+					.score(30)
 					.malade(false)
 					.build();
 			patientRepository.save(patient1);
