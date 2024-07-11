@@ -9,19 +9,25 @@
 <body>
 <div layout:fragment="content">
     <form class="d-flex flex-column align-items-start" th:action="@{/admin/save}" method="post">
+        <input type="hidden" id="id" name="id" th:value="${patient.id}">
         <div class="mb-3 w-100">
             <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control w-100" id="firstName" name="firstName" >
+            <input type="text" class="form-control w-100" id="firstName" name="firstName" th:value="${patient.firstName}">
         </div>
         <div class="mb-3 w-100">
             <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control w-100" id="lastName" name="lastName" >
+            <input type="text" class="form-control w-100" id="lastName" name="lastName" th:value="${patient.lastName}">
             <span th:errors="${patient.lastName}" class="form-text text-danger"></span>
         </div>
         <div class="mb-3 w-100">
             <label for="score" class="form-label">Score</label>
-            <input type="text" class="form-control w-100" id="score" name="score" >
+            <input type="text" class="form-control w-100" id="score" name="score" th:value="${patient.score}">
             <span th:errors="${patient.score}" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 w-100">
+            <label for="birthDate" class="form-label">Birth Date</label>
+            <input type="date" class="form-control w-100" id="birthDate" name="birthDate" th:value="${#dates.format(patient.birthDate, 'yyyy-MM-dd')}">
+            <span th:errors="${patient.birthDate}" class="form-text text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary w-100">Submit</button>
     </form>

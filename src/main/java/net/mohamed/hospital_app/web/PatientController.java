@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class PatientController {
@@ -38,6 +39,18 @@ public class PatientController {
     public String delete(@RequestParam(name="id") Long idPatient,String page,String keyword){
         patientRepository.deleteById(idPatient);
         return "redirect:/index?page="+page+"&keyword="+keyword;
+    }
+
+    @GetMapping("/admin/edit")
+    public String editForm(@RequestParam(name="id") Long idPatient,Model model){
+        Optional<Patient> patientOptional = patientRepository.findById(idPatient);
+        if (patientOptional.isPresent()) {
+            Patient patient = patientOptional.get();
+            model.addAttribute("patient", patient);
+            return "formPatient";
+        } else {
+            return "redirect:/index";
+        }
     }
 
     @RequestMapping(value = "/admin/form", method = RequestMethod.GET)
